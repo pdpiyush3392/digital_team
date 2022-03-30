@@ -294,41 +294,7 @@ Menu
         </footer>
         <input id="c-topButton" type="image" src="arrow.png" />
     </body>
-    <script>
-        AOS.init();
 
-        //script for light box
-        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-          event.preventDefault();
-          $(this).ekkoLightbox();
-        });
-        //script for scroll to top
-        $("#c-topButton").click(function () {
-            $("html, body").animate({scrollTop: 0}, 1000);
-        });
-        //script for scroll to Section
-        $("a").on('click', function(event) {
-            if (this.hash !== "") {
-            var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function(){
-                window.location.hash = hash;
-            });
-            } // End if
-        });
-    </script>
 
-<script>
-    //Script for GoogleSheet linking
-    
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwY7jBbHki6FauWmHdvUERIxRlYP-Bkwg5vghQH5WlcfCbAkEVjtgnbkVt7MwjqK482Aw';
-      const form = document.forms['google-sheet'];
-      form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-        .catch(error => console.error('Error!', error.message))
-      });
-  </script>
+
 </html>
